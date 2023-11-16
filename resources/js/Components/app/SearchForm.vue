@@ -1,5 +1,19 @@
 <template>
-    <div>Search Form</div>
+    <form class="w-[600px] h-[80px] flex items-center">
+        <TextInput
+            type="text"
+            class="block w-full mr-2"
+            v-model="form.search"
+            autocomplete
+            aria-placeholder="Search for files and folders"
+            placeholder="Search for files and folders"
+        />
+    </form>
 </template>
 
-<script setup></script>
+<script setup>
+import TextInput from "@/Components/TextInput.vue";
+import { useForm } from "@inertiajs/vue3";
+
+const form = useForm({ search: "" });
+</script>

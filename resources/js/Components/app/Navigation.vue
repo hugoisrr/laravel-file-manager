@@ -12,7 +12,7 @@
             <CreateNewDropdown />
             <div class="py-3">
                 <NavLink href="/">My Files</NavLink>
-                <NavLink href="/" :active="true">Share with me</NavLink>
+                <NavLink href="/">Share with me</NavLink>
                 <NavLink href="/">Shared by me</NavLink>
                 <NavLink href="/">Trash</NavLink>
             </div>
