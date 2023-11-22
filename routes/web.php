@@ -26,9 +26,10 @@ Route::get('/', function () {
 });
 Route::controller(\App\Http\Controllers\FileController::class)
     ->middleware(['auth', 'verified'])
-    ->group(function() {
+    ->group(function () {
         Route::get('/my-files', 'myFiles')->name('myFiles');
-});
+        Route::get('/folder/create', 'createFolder')->name('folder.create');
+    });
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -39,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
