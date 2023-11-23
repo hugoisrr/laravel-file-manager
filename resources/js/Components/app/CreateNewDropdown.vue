@@ -43,10 +43,17 @@
             </MenuItems>
         </transition>
     </Menu>
+    <CreateFolderModal v-model="createFolderModal" />
 </template>
 
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
+import CreateFolderModal from "@/Components/app/CreateFolderModal.vue";
+import { ref } from "vue";
 
-function showCreateFolderModal() {}
+const createFolderModal = ref(false);
+
+function showCreateFolderModal() {
+    createFolderModal.value = true;
+}
 </script>
